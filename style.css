@@ -1,0 +1,107 @@
+/* Warna dan Font Industrial */
+:root {
+    --industrial-dark: #222831; /* Abu-abu sangat gelap (Hampir hitam) */
+    --industrial-mid: #393e46; /* Abu-abu sedang */
+    --industrial-light: #eeeeee; /* Putih keabu-abuan */
+    --industrial-accent: #00adb5; /* Biru muda/Cyan (Aksen mesin/logam) */
+    --industrial-error: #ff5722; /* Merah untuk penekanan */
+    --font-family-industrial: 'Roboto Mono', monospace; /* Font Monospace/teknis */
+}
+
+/* Reset dan Latar Belakang */
+* {
+    box-sizing: border-box;
+    font-family: var(--font-family-industrial);
+    font-size: 16px;
+}
+
+.retro-background { /* Kita tetap pakai class ini, tapi ganti tampilannya */
+    /* Warna latar belakang gelap untuk kesan pabrik/gudang */
+    background-color: var(--industrial-dark); 
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Jendela Utama (Simulasi Panel Logam) */
+.window {
+    width: 90%;
+    max-width: 900px;
+    height: auto; /* Dibuat fleksibel */
+    min-height: 500px;
+    margin: 40px auto;
+    /* Panel logam gelap */
+    background-color: var(--industrial-mid);
+    border: 5px solid var(--industrial-dark);
+    /* Efek bayangan tegas */
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+/* Header Jendela (Bar Indikator/Title) */
+.window-header {
+    background-color: var(--industrial-dark);
+    color: var(--industrial-light);
+    padding: 10px 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--industrial-accent); /* Garis aksen cyan */
+}
+
+.window-buttons button {
+    background-color: var(--industrial-accent);
+    color: var(--industrial-dark);
+    border: 1px solid var(--industrial-light);
+    padding: 2px 8px;
+    height: 25px;
+    line-height: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 5px;
+    transition: background-color 0.2s;
+}
+.window-buttons button:hover {
+    background-color: var(--industrial-light);
+}
+
+/* Menu Bar (Teks Tegas) */
+.menu-bar {
+    background-color: var(--industrial-dark);
+    padding: 5px 15px;
+    display: flex;
+    gap: 25px;
+    border-bottom: 1px solid var(--industrial-mid);
+}
+
+.menu-bar span {
+    color: var(--industrial-light);
+    cursor: pointer;
+    padding: 2px 0;
+}
+
+.menu-bar .active {
+    font-weight: bold;
+    color: var(--industrial-accent); /* Aksen pada menu aktif */
+    border-bottom: 2px solid var(--industrial-accent);
+}
+
+
+/* Wrapper Konten Utama (Side + Main) */
+.window-content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+    background-color: var(--industrial-mid);
+}
+
+/* Sidebar (Panel Samping) */
+.sidebar {
+    width: 180px;
+    padding: 20px 15px;
+    background-color: var(--industrial-mid);
+    border-right: 2px solid var(--industrial-dark);
+}
